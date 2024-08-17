@@ -614,6 +614,19 @@ impl PublicKeySet {
         Ok(Signature(interpolate(self.commit.degree(), samples)?))
     }
 
+    /// Combines the shares into a signature that can be verified with the main public key. taking a threshold value as argument
+    pub fn combine_signatures_with_threshold<'a, T, I>(
+        threshold: usize,
+        shares: I,
+    ) -> Result<Signature>
+    where
+        I: IntoIterator<Item = (T, &'a SignatureShare)>,
+        T: IntoFr,
+    {
+        let samples = shares.into_iter().map(|(i, share)| (i, &(share.0).0));
+        Ok(Signature(interpolate(threshold, samples)?))
+    }
+
     /// Combines the shares to decrypt the ciphertext.
     pub fn decrypt<'a, T, I>(&self, shares: I, ct: &Ciphertext) -> Result<Vec<u8>>
     where
