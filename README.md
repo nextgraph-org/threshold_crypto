@@ -1,8 +1,10 @@
-# threshold_crypto
+# ng_threshold_crypto
 
 [![crates.io](https://img.shields.io/crates/v/threshold_crypto.svg)](https://crates.io/crates/threshold_crypto)
 [![Documentation](https://docs.rs/threshold_crypto/badge.svg)](https://docs.rs/threshold_crypto)
 [![Build Status](https://travis-ci.org/poanetwork/threshold_crypto.svg?branch=master)](https://travis-ci.org/poanetwork/threshold_crypto)
+
+fork of https://github.com/poanetwork/threshold_crypto for the needs of nextgraph.org
 
 A pairing-based threshold cryptosystem for collaborative decryption and signatures.
 
@@ -24,7 +26,7 @@ An [official security audit](https://github.com/poanetwork/wiki/wiki/Threshold-C
 
 ```toml
 [dependencies]
-threshold_crypto = { version = "0.4", git = "https://github.com/poanetwork/threshold_crypto" }
+threshold_crypto = { version = "0.4", git = "https://git.nextgraph.org/NextGraph/threshold_crypto" }
 ```
 
 `main.rs`:
@@ -74,13 +76,14 @@ test.
 ## Application Details
 
 The basic usage outline is:
-* choose a threshold value `t`
-* create a key set
-* distribute `N` secret key shares among the participants
-* publish the public master key
+
+- choose a threshold value `t`
+- create a key set
+- distribute `N` secret key shares among the participants
+- publish the public master key
 
 A third party can now encrypt a message to the public master key
-and any set of `t + 1` participants *(but no fewer!)* can collaborate to
+and any set of `t + 1` participants _(but no fewer!)_ can collaborate to
 decrypt it. Also, any set of `t + 1` participants can collaborate to sign a message,
 producing a signature that is verifiable with the public master key.
 
@@ -90,9 +93,9 @@ signatures for the same message, produced by two different sets of `t + 1`
 secret key share holders, both signatures will be valid AND
 equal. This is useful in some applications, for example a message signature can serve as a pseudorandom number unknown to anyone until `t + 1` participants agree to reveal it.
 
-In its simplest form, threshold_crypto requires a trusted dealer to
-produce and distribute the secret key shares. However, keys can be produced so that only the corresponding participant knows their secret in the end.  This crate
-includes the basic tools to implement such a *Distributed Key Generation*
+In its simplest form, threshold*crypto requires a trusted dealer to
+produce and distribute the secret key shares. However, keys can be produced so that only the corresponding participant knows their secret in the end. This crate
+includes the basic tools to implement such a \_Distributed Key Generation*
 scheme.
 
 A major application for this library is within a distributed network that
@@ -102,8 +105,8 @@ by third-parties as representing the consensus of the network.
 
 ### Documentation
 
-* [crate documentation](https://docs.rs/threshold_crypto/)
-* [crates.io package](https://crates.io/crates/threshold_crypto) 
+- [crate documentation](https://docs.rs/threshold_crypto/)
+- [crates.io package](https://crates.io/crates/threshold_crypto)
 
 ## Performance
 
@@ -124,8 +127,8 @@ To speed up automatic tests of crates depending on `threshold_crypto`, the `use-
 
 Licensed under either of:
 
-* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-* MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+- Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 at your option.
 

@@ -1,5 +1,5 @@
 [package]
-name = "threshold_crypto"
+name = "ng_threshold_crypto"
 # REMINDER: Update version in `README.md` when incrementing:
 version = "0.4.0"
 authors = [
@@ -9,12 +9,13 @@ authors = [
     "Andrew Gross <andogro@gmail.com>",
     "Nick Sanders <nsan1129@gmail.com>",
     "Marc Brinkmann <git@marcbrinkmann.de>",
+    "Niko PLP <niko@nextgraph.org>"
 ]
 categories = ["cryptography"]
 keywords = ["pairing", "threshold"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/poanetwork/threshold_crypto"
+repository = "https://git.nextgraph.org/NextGraph/threshold_crypto"
 description = "Pairing threshold cryptography"
 edition = "2018"
 
