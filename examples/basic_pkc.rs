@@ -1,6 +1,6 @@
 use bincode::{deserialize, serialize};
+use ng_threshold_crypto::{PublicKey, SecretKey, Signature};
 use serde::{Deserialize, Serialize};
-use threshold_crypto::{PublicKey, SecretKey, Signature};
 
 #[derive(Deserialize, Serialize)]
 struct SignedMsg {

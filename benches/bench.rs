@@ -1,7 +1,7 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 use ff::Field;
-use threshold_crypto::poly::Poly;
-use threshold_crypto::Fr;
+use ng_threshold_crypto::poly::Poly;
+use ng_threshold_crypto::Fr;
 
 const TEST_DEGREES: [usize; 4] = [5, 10, 20, 40];
 const TEST_THRESHOLDS: [usize; 4] = [5, 10, 20, 40];
@@ -91,10 +91,10 @@ mod poly_benches {
 
 mod public_key_set_benches {
     use super::*;
+    use ng_threshold_crypto::SecretKeySet;
     use rand::SeedableRng;
     use rand_xorshift::XorShiftRng;
     use std::collections::BTreeMap;
-    use threshold_crypto::SecretKeySet;
 
     /// Benchmarks combining signatures
     fn combine_signatures(c: &mut Criterion) {
